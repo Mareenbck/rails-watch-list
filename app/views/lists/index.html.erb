@@ -1,8 +1,17 @@
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= list.name %></li>
-    <%= link_to list.name, list_path(list) %>
-  <% end %>
-</ul>
+<div class="header">
+  <h1>Save any kind of movie</h1>
+</div>
 
-<%= link_to " + Add a List", new_list_path  %>
+<div class="container">
+  <div class="center-title">
+    <h1>My Lists</h1>
+  </div>
+  <%= link_to " + Add a List", new_list_path, class: "link-add" %>
+  <div class="container-card">
+  <% @lists.each do |list| %>
+    <%= link_to list.name, list_path(list), class: "card" %>
+  <% end %>
+  </div>
+
+</div>
+
