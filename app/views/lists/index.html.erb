@@ -1,8 +1,30 @@
 <div class="header">
-  <h1>Save any kind of movie</h1>
+  <%#= image_tag "https://images.unsplash.com/photo-1596146828740-8a0117f437e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80" %>
 </div>
 
-<div class="container">
+<div class="container index">
+  <ul class="menu">
+    <li> <%= link_to "NEW LIST", new_list_path, class: "link-menu" %> </li>
+    <li> <%= link_to "ALL MOVIES", root_path, class: "link-menu" %> </li>
+    <li> <%= link_to "MY FRIENDS", root_path, class: "link-menu" %> </li>
+  </ul>
+
+  <div class="lists">
+    <h1>My Lists</h1>
+    <div class="lists-card">
+    <% @lists.each_with_index do |list, index| %>
+    <div class="card-odd">
+      <%= index %>
+    <%= link_to list.name, list_path(list) %>
+    </div>
+<br>
+
+  <% end %>
+  </div>
+  </div>
+</div>
+
+<!-- <div class="container index">
   <div class="center-title">
     <h1>My Lists</h1>
   </div>
@@ -14,4 +36,5 @@
   </div>
 
 </div>
+ -->
 

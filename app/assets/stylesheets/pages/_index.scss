@@ -1,6 +1,13 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "new";
 
 body {
-  background-color: $blue;
+  background-color: $gray;
+  position: relative;
 }
+// .margin-constraint{
+//     /*On indique tout simplement une marge*/
+//     margin-left: 100px;
+//     margin-right: 100px;
+// }
