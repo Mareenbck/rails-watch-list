@@ -5,6 +5,9 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @bookmarks = @list.bookmarks
+    @watched_bookmarks = @bookmarks.where(status: true)
+    @unwatched_bookmarks = @bookmarks.where(status: false)
   end
 
   def new
@@ -29,6 +32,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :tag_list)
   end
 end

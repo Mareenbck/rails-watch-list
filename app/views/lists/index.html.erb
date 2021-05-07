@@ -8,33 +8,19 @@
     <li> <%= link_to "ALL MOVIES", root_path, class: "link-menu" %> </li>
     <li> <%= link_to "MY FRIENDS", root_path, class: "link-menu" %> </li>
   </ul>
-
   <div class="lists">
     <h1>My Lists</h1>
     <div class="lists-card">
-    <% @lists.each_with_index do |list, index| %>
-    <div class="card-odd">
-      <%= index %>
-    <%= link_to list.name, list_path(list) %>
+      <% @lists.each_with_index do |list, index| %>
+        <div class="card-odd">
+          <%= index %>
+          <%= link_to list.name, list_path(list) %>
+        </div>
+        <br>
+      <% end %>
     </div>
-<br>
-
-  <% end %>
-  </div>
   </div>
 </div>
 
-<!-- <div class="container index">
-  <div class="center-title">
-    <h1>My Lists</h1>
-  </div>
-  <%= link_to " + Add a List", new_list_path, class: "link-add" %>
-  <div class="container-card">
-  <% @lists.each do |list| %>
-    <%= link_to list.name, list_path(list), class: "card" %>
-  <% end %>
-  </div>
 
-</div>
- -->
 

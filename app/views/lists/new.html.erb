@@ -1,9 +1,16 @@
 <div class="container new">
 
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
-<% end %>
+  <h1>CREATE A NEW LIST</h1>
 
+  <i class="fas fa-chevron-left"></i>
+  <%= link_to "BACK", lists_path, class: "back" %>
+
+  <div class="form">
+    <%= simple_form_for(@list) do |f| %>
+      <%= f.input :name, placeholder: 'NAME'%>
+      <%= f.input :tag_list, placeholder: "TAGS" %>
+      <%= f.input :tag_list, placeholder: 'IMAGES' %>
+      <%= f.button :submit, "CREATE" %>
+    <% end %>
+  </div>
 </div>
-<%= link_to "Back", lists_path %>

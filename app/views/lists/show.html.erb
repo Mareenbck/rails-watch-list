@@ -1,12 +1,38 @@
-<h2><%= @list.name %></h2>
+<div class="container show">
 
-<ul>
-  <% @list.bookmarks.each do |bookmark| %>
-    <li><%= bookmark.comment %></li>
-    <li><%= bookmark.movie.title%></li>
-  <% end %>
-</ul>
+  <div class="head d-flex justify-content-between align-items-baseline">
+    <h1><%= @list.name %></h1>
+    <%= link_to "+", new_list_bookmark_path(@list)  %>
+  </div>
+  <div class="nav nav-tabs btn-mybookmark">
+    <a class="nav-item nav-link active" href="#first_tab" data-toggle="tab">🎬 TO WATCH</a>
+    <a class="nav-item nav-link " href="#second_tab" data-toggle="tab">✓ WATCHED</a>
+  </div>
+   <div class="tab-content">
+      <div class="tab-pane active" id="first_tab">
+        <% @unwatched_bookmarks.each do |bookmark| %>
+          <div class="bookmark-card">
+            <%= image_tag bookmark.movie.poster_url %>
+            <div class="info">
+              <h3><%= bookmark.movie.title%></h3>
+              <p><%= bookmark.comment %></p>
+            </div>
+            <div class="logos">
+              <i class="far fa-square"></i>
+              <i class="far fa-star "></i>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="tab-pane" id="second_tab">
+        <% @watched_bookmarks.each do |bookmark| %>
+          <div class="bookmark-card">
+            <%= bookmark.movie.title%>
+            <%= bookmark.comment %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-<%= link_to " + Add a Bookmark", new_list_bookmark_path(@list)  %>
-
+</div>
 
