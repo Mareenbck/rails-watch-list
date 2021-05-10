@@ -14,23 +14,43 @@
         <% @unwatched_bookmarks.each do |bookmark| %>
           <div class="bookmark-card">
             <%= image_tag bookmark.movie.poster_url %>
+
             <div class="info">
               <h3><%= bookmark.movie.title%></h3>
               <p><%= bookmark.comment %></p>
               <p><%= bookmark.status %></p>
             </div>
             <div class="logos">
-              <i class="far fa-square"></i>
+               <%= link_to validate_path(bookmark), method: :patch do %>
+               <i class="far fa-square"> </i>
+               <% end %>
+               <%= link_to validate_path(bookmark), method: :patch do %>
               <i class="far fa-star "></i>
+              <% end %>
             </div>
+
           </div>
         <% end %>
       </div>
       <div class="tab-pane" id="second_tab">
         <% @watched_bookmarks.each do |bookmark| %>
           <div class="bookmark-card">
-            <%= bookmark.movie.title%>
-            <%= bookmark.comment %>
+            <%= image_tag bookmark.movie.poster_url %>
+
+            <div class="info">
+              <h3><%= bookmark.movie.title%></h3>
+              <p><%= bookmark.comment %></p>
+              <p><%= bookmark.status %></p>
+            </div>
+            <div class="logos">
+               <%= link_to unwatched_path(bookmark), method: :patch do %>
+               <i class="far fa-check-square"></i>
+               <% end %>
+               <%= link_to validate_path(bookmark), method: :patch do %>
+              <i class="far fa-star "></i>
+              <% end %>
+            </div>
+
           </div>
         <% end %>
       </div>

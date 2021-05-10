@@ -22,16 +22,19 @@ class BookmarksController < ApplicationController
     redirect_to list_path(@list)
   end
 
-  def edit
+  def validate
     @bookmark = Bookmark.find(params[:id])
-  end
-
-  def update
-    @bookmark = Bookmark.find(params[:id])
-    @bookmark.update(bookmark_params)
+    @list = @bookmark.list
+    @bookmark.update(status: true)
     redirect_to list_path(@list)
   end
 
+  def unwatched
+    @bookmark = Bookmark.find(params[:id])
+    @list = @bookmark.list
+    @bookmark.update(status: false)
+    redirect_to list_path(@list)
+  end
 
   private
 
