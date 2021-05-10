@@ -1,9 +1,8 @@
-<h3>Add a movie to your <%= @list.name %> list</h3>
+<h3 id="popup-title">Add a movie to your <%= @list.name %> list</h3>
 
 <%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
   <%= f.association :movie %>
-  <%= f.submit %>
+  <%= f.input :comment %>
+  <br>
+  <%= f.submit "ADD IT", class: "btn-big" %>
 <% end %>
-
-<%= link_to "Back", list_path(@list) %>

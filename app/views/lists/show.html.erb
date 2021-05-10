@@ -2,11 +2,12 @@
 
   <div class="head d-flex justify-content-between align-items-baseline">
     <h1><%= @list.name %></h1>
-    <%= link_to "+", new_list_bookmark_path(@list)  %>
+    <%#= link_to "+", new_list_bookmark_path(@list)  %>
+    <%= render 'bookmarks/new_bookmark' %>
   </div>
   <div class="nav nav-tabs btn-mybookmark">
     <a class="nav-item nav-link active" href="#first_tab" data-toggle="tab">🎬 TO WATCH</a>
-    <a class="nav-item nav-link " href="#second_tab" data-toggle="tab">✓ WATCHED</a>
+    <a class="nav-item nav-link" href="#second_tab" data-toggle="tab">✓ WATCHED</a>
   </div>
    <div class="tab-content">
       <div class="tab-pane active" id="first_tab">
@@ -16,6 +17,7 @@
             <div class="info">
               <h3><%= bookmark.movie.title%></h3>
               <p><%= bookmark.comment %></p>
+              <p><%= bookmark.status %></p>
             </div>
             <div class="logos">
               <i class="far fa-square"></i>

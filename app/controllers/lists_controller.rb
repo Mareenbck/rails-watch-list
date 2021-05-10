@@ -5,6 +5,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @bookmark = Bookmark.new # <-- You need this now.
     @bookmarks = @list.bookmarks
     @watched_bookmarks = @bookmarks.where(status: true)
     @unwatched_bookmarks = @bookmarks.where(status: false)

@@ -13,3 +13,15 @@ import "bootstrap-slider";
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import { initPopup } from '../plugins/init_popup';
+
+
+
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  initPopup();
+  $("#ex2").slider({});
+});
+

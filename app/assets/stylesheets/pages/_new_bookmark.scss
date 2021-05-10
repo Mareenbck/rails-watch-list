@@ -1,0 +1,56 @@
+  .frame {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    top: 0;
+    z-index: 10;
+    padding: 20px !important;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    input.btn-big {
+      width: 250px;
+      margin: 10px 0px;
+    }
+  }
+
+    .frame-content {
+    background-color: #F6F6F6;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+    position:relative;
+  }
+
+  .open {
+  background-color: $blue;
+  color: white;
+  padding: 10px 15px 10px 15px !important;
+  font-weight: bold;
+  border-radius: 50px 0px 0px 50px;
+  font-size: 20px;
+  position: fixed;
+  bottom: 90px;
+  right: 0px;
+  display: inline-block;
+  z-index:6;
+  cursor: pointer;
+  &:hover {
+  background-color: #01c0e6;
+  }
+}
+
+#popup-title{
+  font-size: 20px;
+  font-weight: bold;
+  color: #457B9D;
+  padding: 10px 20px 10px 20px;
+}
+
+.close{
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}

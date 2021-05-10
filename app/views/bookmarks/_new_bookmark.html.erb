@@ -1,0 +1,26 @@
+<div class="container">
+<div class="open">
+  PLAN
+</div>
+
+<div class="frame d-none">
+<%# display none pour cacher %>
+  <div class="frame-content">
+
+<div class='close'>
+  <i class="fas fa-times"></i>
+</div>
+
+<h3 id="popup-title">Add a movie to your <%= @list.name %> list</h3>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.association :movie %>
+  <%= f.input :comment %>
+  <br>
+  <%= f.submit "ADD IT", class: "btn-big" %>
+<% end %>
+
+  </div>
+</div>
+<%#= link_to "Back", list_path(@list) %>
+</div>
